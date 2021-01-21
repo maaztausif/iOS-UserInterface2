@@ -26,16 +26,31 @@ class ViewController: UIViewController ,JellyGifAnimatorDelegate{
 //        0C50F8
         image_Gif.image = UIImage.gifImageWithName("winter")
         
-        let array = ["Title":"Hello"]
-        scroll_View.isPagingEnabled = true
-//        scroll_View.contentSize = CGSize(width: self.view.bounds.width, height: "")
-        scroll_View.showsHorizontalScrollIndicator = false
+//        let array = ["Title":"Hello"]
+//        scroll_View.isPagingEnabled = true
+////        scroll_View.contentSize = CGSize(width: self.view.bounds.width, height: "")
+//        scroll_View.showsHorizontalScrollIndicator = true
+        
+        
+        let textArray = ["job.title", "job.description"]
+        for stage in 0...1{
+            let label = UILabel()
+            label.font = UIFont(name: "CenturyGothic", size: 20)
+            label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            label.textAlignment = .center
+            label.lineBreakMode = .byWordWrapping
+            label.numberOfLines = 0
+            label.text = textArray[stage]
+            scroll_View.addSubview(label)
+        }
+        
         
     }
     
     
     @IBAction func btn_Send(_ sender: Any) {
 //        performSegue(withIdentifier: "cc", sender: nil)
+
 
     }
     
